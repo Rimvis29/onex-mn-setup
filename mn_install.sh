@@ -3,9 +3,9 @@
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='onex.conf'
 CONFIGFOLDER='/root/.onexcore'
-COIN_DAEMON='/onex_core/onexd'
-COIN_CLI='/onex_core/onex-cli'
-COIN_REPO='https://github.com/Rimvis29/onex-mn-setup/releases/download/1.3.0/onex.Ubuntu.16.x.tar.gz'
+COIN_DAEMON='/usr/local/bin/onexd'
+COIN_CLI='/usr/local/bin/onex-cli'
+COIN_REPO='https://github.com/Rimvis29/onex-mn-setup/releases/download/1.3.0/Ubuntu.16.x.tar.gz'
 SENTINEL_REPO='https://github.com/allcoinguru/Sentinel.git'
 COIN_NAME='ONEX'
 COIN_PORT=18291
@@ -41,7 +41,7 @@ function compile_node() {
   COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
   tar xvzf $COIN_ZIP >/dev/null 2>&1
   compile_error
-  cp onex_core/onex* /usr/local/bin
+  cp usr/local/bin/onex* /usr/local/bin
   compile_error
   strip $COIN_DAEMON $COIN_CLI
   cd - >/dev/null 2>&1
@@ -137,10 +137,14 @@ maxconnections=256
 masternode=1
 externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
-addnode=183.63.9.156:28619
-addnode=45.77.40.135:45416
-addnode=5.45.79.60
-addnode=5.45.79.60:58956
+addnode=109.195.131.81:18291
+addnode=164.132.164.49:18291
+addnode=178.33.33.100:18291
+addnode=52.26.10.181:18291
+addnode=52.56.108.63:18291
+addnode=52.57.209.109:18291
+addnode=82.77.149.124:18291
+addnode=86.57.164.166:18291
 EOF
 }
 
