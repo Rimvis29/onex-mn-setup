@@ -41,7 +41,7 @@ masternode start-alias "MN1"
 15. Login to your VPS and check your masternode status by running the following command:.
 ```
 onex-cli masternode status
-onex-cli blockcount
+onex-cli getblockcount
 MAKE SURE YOUR VPS WALLET FULLY SYNCHRONIZED BLOCKS.
 ```
 ***
